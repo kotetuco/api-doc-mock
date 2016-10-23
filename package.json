@@ -1,0 +1,19 @@
+{
+    "name": "api_doc_moc",
+    "version": "0.0.1",
+    "description": "api doc and moc.",
+    "scripts": {
+	"start": "gulp --gulpfile gulpfile.js"
+    },
+    "devDependencies": {
+	"browser-sync": "2.17.3",
+	"gulp": "3.9.1",
+	"gulp-aglio": "0.0.10",
+	"gulp-ejs": "2.2.1",
+	"gulp-rename": "1.2.2",
+	"gulp-shell": "0.5.2",
+	"rimraf": "2.5.4",
+	"protagonist": "1.5.2",
+	"api-mock": "0.3.2"
+    }
+}
