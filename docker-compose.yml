@@ -1,7 +1,7 @@
 nodeapp:
   build: "."
   container_name: "nodeapp"
-  working_dir: "/root/"
+  working_dir: "/home/app"
   ports:
     - "30001:30001"
     - "8088:8088"

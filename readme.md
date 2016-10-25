@@ -14,6 +14,13 @@ The container can be API document server and mock server.
 docker-compose build
 docker-compose up
 ```
+or
+```
+docker-compose build
+docker-compose up -d
+docker-compose logs
+```
+1. `docker-compose stop` command is stop this container.
 
 ## See also
 

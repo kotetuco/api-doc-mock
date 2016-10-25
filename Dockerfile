@@ -1,13 +1,20 @@
 # setting base image
 FROM node:4.6.0
 
-# author
 MAINTAINER kotetuco
 
-# copy files
-COPY package.json /root/
+# add user
+RUN useradd --user-group --create-home --shell /bin/false app &&\
+  npm install --global npm@3.9.6
 
-WORKDIR /root
+ENV HOME=/home/app
+
+# copy package.json (for npm) files
+COPY package.json $HOME
+RUN chown -R app:app $HOME/*
+
+USER app
+WORKDIR /home/app
 
 # install modules
 RUN npm install
@@ -16,18 +23,21 @@ RUN npm install
 EXPOSE 8080
 EXPOSE 30001
 
-# 
+USER root
+
 RUN set -x && \
     mkdir apidocs && \
     mkdir published
 
-COPY gulpfile.js /root/
+COPY gulpfile.js $HOME
+COPY apidocs $HOME/apidocs/
+RUN chown -R app:app $HOME/*
 
-COPY apidocs /root/apidocs/
+USER app
 
 # check install
 RUN set -x && \
     ls -la && \
-    cat /root/package.json
+    cat package.json
 
 CMD ["npm", "start"]
