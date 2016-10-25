@@ -10,7 +10,8 @@ The container can be API document server and mock server.
 1. Cloning this repository.
 1. Make `apidocs` directory and add API document (compliant API Blueprint format).
 1. Run `docker-compose` command.
- 1. Start container :
+
+### Start container
 ```
 docker-compose build
 docker-compose up
@@ -21,10 +22,11 @@ docker-compose build
 docker-compose up -d
 docker-compose logs
 ```
- 1. Stop container :
- ```
- docker-compose stop
- ```
+
+### Stop container
+```
+docker-compose stop
+```
 
 ## See also
 
